@@ -1,0 +1,1 @@
+nohup ruby bidder.rb > bidder.log &

@@ -1,0 +1,7 @@
+username: AUKRO_USERNAME
+my_hidden_name: X...5   #your hidden dotted name
+password: AUKRO_PASSWORD
+web_api_key: f5bcb3e0    #not changing that often
+api_local_version: 85403394    #changing from time to time - check the new version of this app
+aukro_country_code: 56 #fixed for CZ
+web_api_wsdl: https://webapi.allegro.pl/uploader.php?wsdl

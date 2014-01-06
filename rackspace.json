@@ -1,0 +1,10 @@
+{
+    "server" : {
+        "name" : "aukrobot",
+        "imageRef" : "f70ed7c7-b42e-4d77-83d8-40fa29825b85",
+        "flavorRef" : "2",
+        "metadata" : {
+            "My Server Name" : "Aukrobot server"
+        }
+    }
+}
