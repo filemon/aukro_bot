@@ -48,5 +48,6 @@ PLATFORMS
 
 DEPENDENCIES
   fog
+  net-ssh
   paint (~> 0.8.5)
   savon
