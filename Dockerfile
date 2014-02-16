@@ -22,4 +22,4 @@ ENV BUNDLE_GEMFILE /home/aukro_bot/Gemfile
 
 WORKDIR /home/aukro_bot
 
-ENTRYPOINT ["ruby", "bidder.rb"]
+CMD ruby bidder.rb
