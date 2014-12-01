@@ -8,7 +8,7 @@ task :clean do
   #clean stopped containers
   run "docker rm $(docker ps -a -q)"
   #clean untagged images
-  run "docker rmi $(docker images -a | grep \"^<none>\" | awk '{print $3}')"
+  run "docker rmi $(docker images| grep \"^<none>\" | awk '{print $3}')"
 end
 
 
