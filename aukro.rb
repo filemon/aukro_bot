@@ -103,7 +103,7 @@ module Aukro
 
     def get_actual_price (auction)
       page = open(auction.url).read
-      if page =~ %r{<strong id="priceValue".*class="price" itemprop="price">(.*?)( K.*)</strong>}m
+      if page =~ %r{<strong id="priceValue".*class="price" itemprop="price">([0-9]*)[,.]?.*</strong>}m
         $1.gsub(/[^0-9]/, '').to_i
       end
     end
