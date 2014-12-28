@@ -17,7 +17,7 @@ task :install do
   upload "auctions.yml", "aukro_bot/auctions.yml", :via => :scp
   upload "aukro.yml", "aukro_bot/aukro.yml", :via => :scp
   upload "Dockerfile", "aukro_bot/Dockerfile", :via => :scp
-  run 'cd aukro_bot && docker build -rm -no-cache -t="aukro_bot" .'
+  run 'cd aukro_bot && docker build --rm --no-cache -t="aukro_bot" .'
 end
 
 task :start do

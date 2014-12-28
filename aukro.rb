@@ -7,7 +7,7 @@ require 'paint'
 
 module Aukro
 
-  TIME_TO_END_GAP = 25
+  TIME_TO_END_GAP = 25*60*60*60*60
   SHORT_SLEEP_TIME = 10
   DEEP_SLEEP_TIME = 45*60
 
@@ -65,7 +65,9 @@ module Aukro
 
     def initialize(auctions_config)
       @aukro_config = YAML.load_file('aukro.yml')
-      @soap_client = Savon.client(wsdl: @aukro_config['web_api_wsdl'], log_level: :info, log: false)
+      @soap_client = Savon.client(wsdl: @aukro_config['web_api_wsdl'],
+                                  log_level: @aukro_config['soap_debug'] ? :debug : :info,
+                                  log: @aukro_config['soap_debug'])
 
       @aukro_config['api_local_version'] = api_local_version @aukro_config['web_api_key'], @aukro_config['aukro_country_code']
 
@@ -113,7 +115,7 @@ module Aukro
         response = @soap_client.call(:do_bid_item,
                                      :message => {
                                          :'session-handle' => @session[:session_handle_part],
-                                         :'bid-it -id' => auction.id,
+                                         :'bid-it-id' => auction.id,
                                          :'bid-user-price' => price,
                                          :'bid-quantity' => 1,
                                          :'bid-buy-now' => 0})

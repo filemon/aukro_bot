@@ -4,3 +4,4 @@ password: AUKRO_PASSWORD
 web_api_key: f5bcb3e0    #your API key
 aukro_country_code: 56 #fixed for CZ
 web_api_wsdl: https://webapi.allegro.pl/uploader.php?wsdl
+soap_debug: false
