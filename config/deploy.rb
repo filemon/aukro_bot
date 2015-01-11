@@ -1,4 +1,4 @@
-#role :host, "XXX.XXX.XXX.XXX" or set via HOSTS variable
+
 set :user, "root"
 set :use_sudo, false
 set :ssh_options, {forward_agent: true}

@@ -7,7 +7,7 @@ require 'paint'
 
 module Aukro
 
-  TIME_TO_END_GAP = 25*60*60*60*60
+  TIME_TO_END_GAP = 25
   SHORT_SLEEP_TIME = 10
   DEEP_SLEEP_TIME = 45*60
 
