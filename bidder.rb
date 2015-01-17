@@ -1,3 +1,3 @@
 require_relative 'aukro'
 
-bidder = Aukro::Bidder.new ('auctions.yml')
+bidder = Aukro::Bidder.new('auctions.yml')
