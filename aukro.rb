@@ -98,10 +98,7 @@ module Aukro
     end
 
     def get_actual_price(auction)
-      page = open(auction.url).read
-      if page =~ %r{<strong id="priceValue".*class="price" itemprop="price">([0-9\s,.]*)( K.*)</strong>}m
-        Regexp.last_match[1].gsub(/[^0-9,.]/, '').to_i
-      end
+      get_auction_details(auction)[:it_price].to_i
     end
 
     def increase_price(auction, price)
@@ -144,7 +141,7 @@ module Aukro
 
       # xsd structure demarshalled if winner is empty
       auction.winner       = auction_details[:it_high_bidder_login] unless auction_details[:it_high_bidder_login].is_a? Hash
-      auction.actual_price = get_actual_price(auction)
+      auction.actual_price = auction_details[:it_price].to_i
     end
 
     def get_winner(auction)
